@@ -1,6 +1,6 @@
 import LanguageContext from '@/context/language';
 
-const { useContext, useState } = require('react');
+const { useContext } = require('react');
 
 const ButtonLanguage = (props) => {
 	const ctx = useContext(LanguageContext);

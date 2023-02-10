@@ -1,39 +1,61 @@
 import Link from 'next/link';
+import { useContext } from 'react';
 
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import { MdOutlineLocalPostOffice, MdDarkMode, MdLanguage } from 'react-icons/md';
+import { MdOutlineLocalPostOffice } from 'react-icons/md';
+import LanguageContext from '../context/language';
+import ButtonLanguage from './ButtonLanguage';
+import Poland from '../public/assets/poland.svg';
+import UK from '../public/assets/united-kingdom.svg';
+import Image from 'next/image';
+import Cardicon from './Cards/Card-Icon';
 
 const Main = () => {
+	const ctx = useContext(LanguageContext);
 	return (
 		<div id="main" className=" w-full h-screen text-center pt-24 ">
 			<div className=" max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
-				<div className=" flex justify-center absolute top-[10%] l-[50%] h-auto w-full text-4xl m-3 p-3">
-					<div className="">
-						<MdLanguage className=" mx-3" />
-					</div>
+				<div className=" flex justify-center absolute top-[10%] l-[50%] h-auto w-full text-4xl m-3 p-4">
+					<ButtonLanguage>
+						<p className=" text-sm ">{!ctx.english ? 'Switch on English' : 'Zmień na Polski'}</p>
+						{ctx.english && <Image src={Poland} height={20} className=" ml-4" />}
+						{!ctx.english && <Image src={UK} height={20} className="ml-4" />}
+					</ButtonLanguage>
 				</div>
+
 				<div>
-					<p className=" uppercase text-sm tracking-widest text-gray-700">Kilka słów o mnie</p>
+					<p className=" uppercase text-sm tracking-widest text-gray-700">
+						{!ctx.english && 'Kilka słów o mnie'}
+						{ctx.english && 'Some about me'}
+					</p>
 					<h1>
-						Cześć, jestem <span className=" color-primary">Krystian</span>
+						{!ctx.english ? 'Cześć, jestem' : 'Hi, i am'} <span className=" color-primary">Krystian</span>
 					</h1>
 					<h2 className=" py-2 text-gray-500 max-w-[70%] m-auto">Frontend Web Developer</h2>
 					<p className=" py-6 text-gray-700 max-w-[70%] m-auto tracking-wide">
-						Koncetruje się na tworzeniu responsywnych aplikacji oraz stron internetowych typu front-end.
-						<br /> Podczas budowy korzystam z aktulanej dokumentacji dostępnej na oficjalnych stronach wybranych freamworków oraz z wykorzystaniem technik pod względem pozycjonowania stron w
-						przeglądarkach
+						{!ctx.english
+							? `Koncetruje się na tworzeniu responsywnych aplikacji oraz stron internetowych typu front-end.
+						 Podczas budowy korzystam z aktulanej dokumentacji dostępnej na oficjalnych stronach wybranych freamworków oraz z wykorzystaniem technik pod względem optymalizacji stron w
+						przeglądarkach.`
+							: `I focuses on creating responsive applications and front-end websites.
+							 During construction, I use the current documentation available on the official websites of selected frameworks and using techniques in terms of page optimization in
+							browsers.`}
 					</p>
 					<div className=" flex justify-between items-center max-w-xs m-auto py-4">
-						<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-150 ease-in duration-500 text-xl">
-							<AiFillLinkedin />
-						</div>
-						<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-150 ease-in duration-500 text-xl">
-							<AiFillGithub />
-						</div>
+						<Link href="https://www.linkedin.com/in/krystian-radziszewski/">
+							<Cardicon>
+								<AiFillLinkedin />
+							</Cardicon>
+						</Link>
+						<Link href="https://github.com/KrystianRadziszewski">
+							<Cardicon>
+								<AiFillGithub />
+							</Cardicon>
+						</Link>
 						<Link href="/#contactForm">
-							<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-150 ease-in duration-500 text-xl">
+							<Cardicon>
 								<MdOutlineLocalPostOffice />
-							</div>
+							</Cardicon>
 						</Link>
 					</div>
 				</div>

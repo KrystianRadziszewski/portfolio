@@ -1,28 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, {  useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import navLogo from '../public/assets/mylogo.png';
 import { AiOutlineClose, AiOutlineMenu, AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import { MdOutlineLocalPostOffice } from 'react-icons/md';
-// import { useRouter } from 'next/router';
+import { Cardiconmobile } from './Cards/Card-Icon';
+import LanguageContext from '@/context/language';
 
 const Navbar = () => {
+	const ctx = useContext(LanguageContext);
 	const [navMobile, setNavMobile] = useState(false);
 	const [shadow, setShadow] = useState(false);
-
-	// const [navBackground, setNavBackground] = useState('#f8fafc');
-	// const [linkColor, setLinkColor] = useState('#1e293b');
-	// const router = useRouter();
-
-	// useEffect(() => {
-	// 	if (router.isPath === '/project1' || router.isPath === '/project2') {
-	// 		setNavBackground('transparent');
-	// 		setLinkColor('#f8fafc');
-	// 	} else {
-	// 		setNavBackground('#f8fafc');
-	// 		setLinkColor('#1e293b');
-	// 	}
-	// }, [router]);
 
 	useEffect(() => {
 		const handleShadow = () => {
@@ -51,16 +39,16 @@ const Navbar = () => {
 							<li className=" ml-10 text-sm  hover:border-b-2">Home</li>
 						</Link>
 						<Link href="/#about">
-							<li className=" ml-10 text-sm  hover:border-b-2">O mnie</li>
+							<li className=" ml-10 text-sm  hover:border-b-2">{!ctx.english ? 'O mnie' : 'About me'}</li>
 						</Link>
 						<Link href="/#skills">
-							<li className=" ml-10 text-sm  hover:border-b-2">Umiejętności</li>
+							<li className=" ml-10 text-sm  hover:border-b-2">{!ctx.english ? 'Umiejętności' : 'Skills'}</li>
 						</Link>
 						<Link href="/#projects">
-							<li className=" ml-10 text-sm  hover:border-b-2">Projekty</li>
+							<li className=" ml-10 text-sm  hover:border-b-2">{!ctx.english ? 'Projekty' : 'Projects'}</li>
 						</Link>
 						<Link href="/#contact">
-							<li className=" ml-10 text-sm  hover:border-b-2">Kontakt</li>
+							<li className=" ml-10 text-sm  hover:border-b-2">{!ctx.english ? 'Kontakt' : 'Contact'}</li>
 						</Link>
 					</ul>
 					{/* hamburger icon */}
@@ -84,7 +72,7 @@ const Navbar = () => {
 							</div>
 						</div>
 						<div className=" border-b border-gray-700 my-4">
-							<p>Tworzenie to przyjemność</p>
+							<p>{!ctx.english ? 'Tworzenie to przyjemność' : 'Creating is a pleasure'}</p>
 						</div>
 					</div>
 					<div className="py-3 flex flex-col">
@@ -93,31 +81,37 @@ const Navbar = () => {
 								<li className=" py-4 text-sm  hover:border-b-2">Home</li>
 							</Link>
 							<Link href="/#about">
-								<li className=" py-4 text-sm  hover:border-b-2">O mnie</li>
+								<li className=" py-4 text-sm  hover:border-b-2">{!ctx.english ? 'O mnie' : 'About me'}</li>
 							</Link>
 							<Link href="/#skills">
-								<li className=" py-4 text-sm  hover:border-b-2">Umiejętności</li>
+								<li className=" py-4 text-sm  hover:border-b-2">{!ctx.english ? 'Umiejętności' : 'Skills'}</li>
 							</Link>
 							<Link href="/#projects">
-								<li className=" py-4 text-sm  hover:border-b-2">Projekty</li>
+								<li className=" py-4 text-sm  hover:border-b-2">{!ctx.english ? 'Projekty' : 'Projects'}</li>
 							</Link>
 							<Link href="/#contact">
-								<li className=" py-4 text-sm  hover:border-b-2">Kontakt</li>
+								<li className=" py-4 text-sm  hover:border-b-2">{!ctx.english ? 'Kontakt' : 'Contact'}</li>
 							</Link>
 						</ul>
 						<div className=" pt-20">
-							<p className=" uppercase tracking-widest text-blue-400">Nawiąż kontakt</p>
+							<p className=" uppercase tracking-widest text-blue-400">{!ctx.english ? 'Nawiąż kontakt' : 'Conected with me'}</p>
 						</div>
 						<div className=" flex items-center justify-start my-4 w-full sm:w-[80%]">
-							<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-105 ease-in duration-500">
-								<AiFillLinkedin />
-							</div>
-							<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-105 ease-in duration-500">
-								<AiFillGithub />
-							</div>
-							<div className=" rounded-full shadow-lg shadow-gray-700 p-3 mx-5 cursor-pointer hover:scale-105 ease-in duration-500">
-								<MdOutlineLocalPostOffice />
-							</div>
+							<Link href="https://www.linkedin.com/in/krystian-radziszewski/">
+								<Cardiconmobile>
+									<AiFillLinkedin />
+								</Cardiconmobile>
+							</Link>
+							<Link href="https://github.com/KrystianRadziszewski">
+								<Cardiconmobile>
+									<AiFillGithub />
+								</Cardiconmobile>
+							</Link>
+							<Link href="/#contactForm">
+								<Cardiconmobile>
+									<MdOutlineLocalPostOffice />
+								</Cardiconmobile>
+							</Link>
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 import LanguageContext from '@/context/language';
 import Image from 'next/image';
-import React, { useContext } from 'react';
 import myAvatar from '../public/assets/myAvatar.png';
+import React, { useContext } from 'react';
 
 const About = () => {
 	const ctx = useContext(LanguageContext);
@@ -11,7 +11,7 @@ const About = () => {
 				<div className=" col-span-2">
 					<p className=" uppercase text-xl tracking-widest color-primary"></p>
 					<h2 className=" py-5">{!ctx.english ? 'Kim jestem' : 'Who i am'}</h2>
-					<p className=" py-3 text-gray-500">Freelancer</p>
+					<p className=" py-3 text-gray-500">{!ctx.english ? 'Freelancer' : 'Freelancer'}</p>
 					<p className=" tracking-wide">
 						{!ctx.english
 							? 'Jestem osobą która obecnie tworzy aplikacje typu demo zdobywając doświadczenie oraz jako freelancer realizuję zlecenia. Ciągle poszerzam swoją wiedzę i uczę się nowych technik tworzenia aplikacji oraz stron statycznych, dynamicznych, responsywnych i przyjaznych użytkownikowi. Korzystam z oficjalnych dokumentacji wybranych freamworków co pozwala sprawnie rozwiązywać bieżące problemy. Zamiłowanie do tworzenia mam od dziecka stąd też pomysł na budownaie w internecie. Uwielbiam nowe wyzwania, poznawanie nowych ludzi oraz pracę zespołową. Podróże są nie odłączną częścią moje życia.'

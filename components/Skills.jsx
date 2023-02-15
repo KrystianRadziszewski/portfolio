@@ -28,7 +28,7 @@ const Skills = () => {
 					<Cardskill src={tailwind} title="TAILWIND" />
 					<Cardskill src={mongo} title="MONGO DB" />
 					<Cardskill src={firebase} title="FIREBASE" />
-					<Cardskill src={github} title="className" />
+					<Cardskill src={github} title="GITHUB" />
 				</div>
 			</div>
 		</div>

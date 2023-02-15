@@ -7,6 +7,7 @@ import { BsArrowUpCircle } from 'react-icons/bs';
 import Link from 'next/link';
 import LanguageContext from '@/context/language';
 import Cardicon from './Cards/Card-Icon';
+import ContactForm from './Form/contact-form';
 
 const Contact = () => {
 	const ctx = useContext(LanguageContext);
@@ -54,29 +55,7 @@ const Contact = () => {
 					{/* right, bottom */}
 
 					<div id="contactForm" className=" col-span-3 w-full h-auto shadow-xl shadow-gray-500 rounded-xl lg:p-4">
-						<div className=" p-4">
-							<form action="">
-								<div className=" flex flex-col">
-									<label className=" uppercase py-2 text-sm">{!ctx.english ? 'Imię' : 'Name'}</label>
-									<input type="text" className=" flex border-2 border-gray-300 rounded-lg p-3" />
-								</div>
-								<div className=" flex flex-col py-2">
-									<label className=" uppercase py-2 text-sm">Email</label>
-									<input type="email" className=" flex border-2 border-gray-300 rounded-lg p-3" />
-								</div>
-								<div className=" flex flex-col py-2">
-									<label className=" uppercase py-2 text-sm">{!ctx.english ? 'Temat' : 'Topic'}</label>
-									<input type="text" className=" flex border-2 border-gray-300 rounded-lg p-3" />
-								</div>
-								<div className=" flex flex-col py-2">
-									<label className=" uppercase py-2 text-sm">{!ctx.english ? 'Wiadomość' : 'Message'}</label>
-									<textarea cols="30" rows="10" className=" border-2 border-gray-300 rounded-lg p-3" />
-								</div>
-								<div>
-									<button className=" w-full p-4 mt-4 text-gray-200">{!ctx.english ? 'Wyślij wiadomość' : 'Send message'}</button>
-								</div>
-							</form>
-						</div>
+						<ContactForm />
 					</div>
 				</div>
 				<div className=" flex justify-end py-12 mr-10">

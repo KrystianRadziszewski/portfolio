@@ -18,8 +18,8 @@ const Main = () => {
 				<div className=" flex justify-center absolute top-[10%] l-[50%] h-auto w-full text-4xl m-3 p-4">
 					<ButtonLanguage>
 						<p className=" text-sm ">{!ctx.english ? 'Switch on English' : 'Zmień na Polski'}</p>
-						{ctx.english && <Image src={Poland} height={20} className=" ml-4" />}
-						{!ctx.english && <Image src={UK} height={20} className="ml-4" />}
+						{ctx.english && <Image src={Poland} height={20} className=" ml-4" alt="flagicon" />}
+						{!ctx.english && <Image src={UK} height={20} className="ml-4" alt="flagicon" />}
 					</ButtonLanguage>
 				</div>
 

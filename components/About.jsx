@@ -20,7 +20,7 @@ const About = () => {
 				</div>
 				<div>
 					<div className=" shadow-lg shadow-gray-700 relative mx-auto my-20 bg-gradient-to-b from-purple-400 to-purple-700 rounded-full h-96 w-96 overflow-hidden md:h-96 md:w-96">
-						<Image src={myAvatar} />
+						<Image src={myAvatar} alt="avatar" />
 					</div>
 				</div>
 			</div>

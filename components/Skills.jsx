@@ -18,7 +18,7 @@ const Skills = () => {
 		<div id="skills" className="  w-full lg:h-screen p-2 pt-24">
 			<div className=" max-w-7xl mx-auto flex flex-col justify-center h-full">
 				<p className=" uppercase text-xl tracking-widest color-primary">{!ctx.english ? 'Umiejętności' : 'Skills'}</p>
-				<h2 className=" py-5">{!ctx.english ? 'Co potrafię' : 'What i can do'}</h2>
+				<h2 className=" py-5">{!ctx.english ? 'Co potrafię' : 'What I can do'}</h2>
 				<div className=" grid md:grid-cols-3 lg:grid-cols-4 gap-8">
 					<Cardskill src={html} title="HTML" />
 					<Cardskill src={css} title="CSS" />

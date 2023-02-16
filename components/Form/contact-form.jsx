@@ -17,12 +17,19 @@ const ContactForm = () => {
 		emailjs.sendForm('service_xfwbvrw', 'template_r6pco4l', form.current, 'vkpbqgRrDvMITEzRs').then(
 			(result) => {
 				console.log(result.text);
-				setName('');
+				clearInputs();
 			},
 			(error) => {
 				console.log(error.text);
 			}
 		);
+	};
+
+	const clearInputs = () => {
+		setName('');
+		setEmail('');
+		setSubject('');
+		setMessage('');
 	};
 
 	return (
@@ -51,6 +58,7 @@ const ContactForm = () => {
 						type="email"
 						className=" flex border-2 border-gray-300 rounded-lg p-3"
 						placeholder={!ctx.english ? 'Twój adres email' : 'Your email adress'}
+						value={email}
 						required
 					/>
 				</div>
@@ -65,6 +73,7 @@ const ContactForm = () => {
 						placeholder={!ctx.english ? 'Podaj temat wiadomości' : 'State the subject of your message'}
 						required
 						maxLength="20"
+						value={subject}
 					/>
 				</div>
 				<div className=" flex flex-col py-2">
@@ -79,15 +88,11 @@ const ContactForm = () => {
 						placeholder={!ctx.english ? 'Treść wiadomości' : 'Your message'}
 						required
 						maxLength="200"
+						value={message}
 					/>
 				</div>
 				<div>
-					<button
-						// onClick={() => sendEmail()}
-						className=" w-full p-4 mt-4 text-gray-200"
-					>
-						{!ctx.english ? 'Wyślij wiadomość' : 'Send message'}
-					</button>
+					<button className=" w-full p-4 mt-4 text-gray-200">{!ctx.english ? 'Wyślij wiadomość' : 'Send message'}</button>
 				</div>
 			</form>
 		</div>

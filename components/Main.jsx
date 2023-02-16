@@ -7,8 +7,11 @@ import LanguageContext from '../context/language';
 import ButtonLanguage from './ButtonLanguage';
 import Poland from '../public/assets/poland.svg';
 import UK from '../public/assets/united-kingdom.svg';
+
+import CVpl from '../public/assets/cvpol2.png';
+import CVen from '../public/assets/cveng2.png';
 import Image from 'next/image';
-import Cardicon from './Cards/Card-Icon';
+import Cardicon, { Cardiconcv } from './Cards/Card-Icon';
 
 const Main = () => {
 	const ctx = useContext(LanguageContext);
@@ -23,13 +26,13 @@ const Main = () => {
 					</ButtonLanguage>
 				</div>
 
-				<div>
+				<div className=" mt-32">
 					<p className=" uppercase text-sm tracking-widest text-gray-700">
 						{!ctx.english && 'Kilka słów o mnie'}
 						{ctx.english && 'Some about me'}
 					</p>
 					<h1>
-						{!ctx.english ? 'Cześć, jestem' : 'Hi, i am'} <span className=" color-primary">Krystian</span>
+						{!ctx.english ? 'Cześć, jestem' : 'Hi, I am'} <span className=" color-primary">Krystian</span>
 					</h1>
 					<h2 className=" py-2 text-gray-500 max-w-[70%] m-auto">Frontend Web Developer</h2>
 					<p className=" py-6 text-gray-700 max-w-[70%] m-auto tracking-wide">
@@ -57,6 +60,18 @@ const Main = () => {
 								<MdOutlineLocalPostOffice />
 							</Cardicon>
 						</Link>
+					</div>
+					<div className=" flex justify-center items-center max-w-xs m-auto py-4 ">
+						<Cardiconcv>
+							<a href="Krystian-Radziszewski_CVPL.pdf" download>
+								<Image src={CVpl} width={70} className="mx-5" alt="cvicon" />
+							</a>
+						</Cardiconcv>
+						<Cardiconcv>
+							<a href="Krystian-Radziszewski_CVANG.pdf" download>
+								<Image src={CVen} width={70} className="mx-5" alt="cvicon" />
+							</a>
+						</Cardiconcv>
 					</div>
 				</div>
 			</div>

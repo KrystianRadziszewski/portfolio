@@ -6,11 +6,11 @@ import React, { useContext } from 'react';
 const About = () => {
 	const ctx = useContext(LanguageContext);
 	return (
-		<div id="about" className="  w-full md:h-screen p-2 flex items-center pb-16 pt-24">
+		<div id="about" className="  w-full md:h-screen p-2 flex items-center pb-16 pt-32">
 			<div className=" max-w-7xl m-auto md:grid grid-cols-3 gap-8">
 				<div className=" col-span-2">
 					<p className=" uppercase text-xl tracking-widest color-primary"></p>
-					<h2 className=" py-5">{!ctx.english ? 'Kim jestem' : 'Who i am'}</h2>
+					<h2 className=" py-5">{!ctx.english ? 'Kim jestem' : 'Who I am'}</h2>
 					<p className=" py-3 text-gray-500">{!ctx.english ? 'Freelancer' : 'Freelancer'}</p>
 					<p className=" tracking-wide">
 						{!ctx.english

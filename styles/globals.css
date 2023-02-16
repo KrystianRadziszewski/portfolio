@@ -55,4 +55,7 @@ html {
 	.myborder3 {
 		@apply border-2 border-blue-600;
 	}
+	.button-off {
+		@apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-slate-500 to-slate-700 text-slate-400 opacity-50;
+	}
 }

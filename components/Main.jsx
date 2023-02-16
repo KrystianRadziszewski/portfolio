@@ -64,12 +64,12 @@ const Main = () => {
 					<div className=" flex justify-center items-center max-w-xs m-auto py-4 ">
 						<Cardiconcv>
 							<a href="Krystian-Radziszewski_CVPL.pdf" download>
-								<Image src={CVpl} width={70} className="mx-5" alt="cvicon" />
+								<Image src={CVpl} width={70} className="mx-5 opacity-80" alt="cvicon" />
 							</a>
 						</Cardiconcv>
 						<Cardiconcv>
 							<a href="Krystian-Radziszewski_CVANG.pdf" download>
-								<Image src={CVen} width={70} className="mx-5" alt="cvicon" />
+								<Image src={CVen} width={70} className="mx-5 opacity-80" alt="cvicon" />
 							</a>
 						</Cardiconcv>
 					</div>

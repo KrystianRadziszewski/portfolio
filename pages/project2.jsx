@@ -14,7 +14,7 @@ const project1 = () => {
 				<Image src={img1} alt="/" className=" absolute z-1" layout="fill" objectFit="cover" />
 				<div className=" absolute max-w-7xl text-white z-10 top-[60%] left-[5%] p-2">
 					<h2 className=" py-2">{!ctx.english ? 'Realizacja zleceń' : 'Orders'}</h2>
-					<h3>Next JS </h3>
+					<h3>{!ctx.english ? 'W trakcie budowy' : 'In the process of construction'}</h3>
 				</div>
 			</div>
 
